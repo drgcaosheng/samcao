@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#Filename: settings.py
 """
 Django settings for mailclient project.
 
@@ -20,12 +23,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'k1ff)-@5u=!ya**bkm%(lzq6(+q*w4oj0kunz0^8f#u@6+&2w8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#是否开启调试模式.
 DEBUG = True
+#关闭调试模式可访问web的hosts,*表示所有
+ALLOWED_HOSTS = ['*']
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
 
+#设置项是否开启URL访问地址后面不为/跳转至带有/的路径
+APPEND_SLASH=True
 
 # Application definition
 
@@ -81,3 +88,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#导入html模版.文件.
+import os.path
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(__file__),'templates').replace('\\','/'),
+)

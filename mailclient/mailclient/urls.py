@@ -3,7 +3,6 @@ from django.contrib import admin
 
 
 urlpatterns = patterns('',
-    # ('^hello/$',hello),
     # Examples:
     # url(r'^$', 'mailclient.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -12,5 +11,8 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('mailclient.views',
-    ('^hello/$','hello'),
+    (r'^$','hello'),
+    (r'^hello/$','hello'),
+    (r'^now/$','current_datetime'),
+    (r'^time/plus/(\d{1,2})/$','hours_ahead'),
 )
