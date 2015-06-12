@@ -1,1 +1,12 @@
-<html><body>It is now {{ current_date }}.</body></html>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+    The current time
+{% endblock %}
+
+{% block content %}
+    <p>It it now {{ current_time }}.</p>
+    <img src="{% static "images/2.jpg" %}" alt="My image" />
+    <a href="{% static "filename/testa.rar" %}">test---------------</a>
+    
+{% endblock %}
