@@ -9,12 +9,16 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^favicon\.ico$','django.views.generic.simple.redirect_to',{'url':'/static/images/favicon.ico'}),
-)# + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+    #url(r'^favicon\.ico$','django.views.generic.simple.redirect_to',{'url':'/static/images/favicon.ico'}),
+)
 
 urlpatterns += patterns('mailclient.views',
-    (r'^$','hello'),
+    (r'^$','webmail'),
     (r'^hello/$','hello'),
     (r'^now/$','current_datetime'),
     (r'^time/plus/(\d{1,2})/$','hours_ahead'),
+)
+
+urlpatterns += patterns('webmail.views',
+    (r'^test/$','test'),
 )

@@ -3,7 +3,8 @@ import datetime
 from django.shortcuts import render_to_response
 
 def hello(request):
-    return HttpResponse('Hello World!')
+    #return HttpResponse('Hello World!')
+    return render_to_response('index.html')
     
     
 def current_datetime(request):
@@ -21,5 +22,8 @@ def hours_ahead(request,offset):
     #html = "<html><body>In %s hour(s), it will be %s.</body></html>" % (offset,dt)
     #return HttpResponse(html)
     return render_to_response("hours_ahead.html",{'hour_offset':offset,'next_time':dt})
+    
+def webmail(request):
+    return render_to_response('index.html')
     
     
