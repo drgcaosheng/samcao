@@ -21,6 +21,7 @@ urlpatterns += patterns('mailclient.views',
 
 urlpatterns += patterns('webmail.views',
     (r'^test/$','test'),
-    (r'^display/','ua_display_good'),
-    (r'^displayall/','display_meta'),
+    (r'^display/$','ua_display_good'),
+    (r'^displayall/$','display_meta'),
+    (r'^login_webmail/$','login_webmail'),
 )

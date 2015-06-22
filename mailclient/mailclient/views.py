@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 import datetime
 from django.shortcuts import render_to_response
-
+#post
+from django.template import RequestContext
+#post
 def hello(request):
     #return HttpResponse('Hello World!')
     return render_to_response('index.html')
@@ -24,6 +26,4 @@ def hours_ahead(request,offset):
     return render_to_response("hours_ahead.html",{'hour_offset':offset,'next_time':dt})
     
 def webmail(request):
-    return render_to_response('index.html')
-    
-    
+    return render_to_response('index.html',context_instance=RequestContext(request))    

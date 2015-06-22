@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+    Search_Books
+{% endblock %}
+
+{% block content %}
+    {% comment %}
+    {{ books }}
+    {% endcomment %}
+    {% if books %}
+        <p>Found {{ books|length }} book{{ books|pluralize }}.</p>
+        <ul>
+            {% for book in books %}
+                <li>{{ book.title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No books matched your search criteria.</p>
+    {% endif %}
+    
+{% endblock %}
